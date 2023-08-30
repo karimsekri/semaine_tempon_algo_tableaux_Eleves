@@ -1,24 +1,32 @@
-import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
+const nomsPossibles = [
+  "Amandine",
+  "Benoit",
+  "Cédric",
+  "Dorian",
+  "Emilie",
+  "Fabien",
+  "Géraldine",
+  "Hélène",
+  "Isabelle",
+  "Jérôme",
+  "Karine"
+]
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
+//1. Créez un tableau d'élèves qui contient un nom aléatoire pour chaque élève.
+let prenom : string[] = [];
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+for (let index = 0; index < 16; index++) {
+    prenom.push(nomsPossibles[Math.floor(Math.random() * 10)]);
+    
+}
+
+console.log("1. Créez un tableau d''élèves qui contient un nom aléatoire pour chaque élève.", prenom);
+
+//2. Créez un tableau de notes qui contient une note aléatoire entre 0 et 20 pour chaque élève.
+let notes : number[] = [];
+
+for (let index = 0; index < 16; index++) {
+  notes.push(Math.floor(Math.random() * 21));
+}
+
+console.log("2. Créez un tableau de notes qui contient une note aléatoire entre 0 et 20 pour chaque élève.",notes);
