@@ -46,13 +46,40 @@ function noteMoyenneDuPrenomDonnerprenom(monPrenom:string) {
   let nbreDeFois = 0;
   let moyenne = 0;
   prenoms.forEach((item, index) => {
-      if (item === monPrenom) {
-        nbreDeFois++
+      if (item === monPrenom) {        
         console.log("Item : ", item, "Index : ", index)
         console.log(notes[index])
-        somme = somme + notes[index]                
+        somme = somme + notes[index]
+        nbreDeFois++                
       }      
   });
   moyenne = somme / nbreDeFois
-  console.log("Le prénom ", monPrenom, " apparait ", nbreDeFois, " fois  . La myenne est de ", moyenne)  
+  console.log("Le prénom ", monPrenom, " apparait ", nbreDeFois, " fois.  la note moyenne des élèves qui portent ce prénom est ", moyenne)  
+}
+
+//5. Créez une fonction qui retourne la note maximale de la classe.
+console.log("5. Créez une fonction qui retourne la note maximale de la classe.");
+console.log("la note maximale de la classe est : ",noteMaximaleClasse());
+function noteMaximaleClasse() {
+  let noteMaximale = 0;
+  
+  notes.forEach((item, index) => {
+    if (item > noteMaximale) {
+      noteMaximale = item      
+    }
+  });
+  return noteMaximale
+}
+
+// 6. Créez une fonction qui retourne la note minimale de la classe.
+console.log("6. Créez une fonction qui retourne la note minimale de la classe.");
+console.log("la note minimale de la classe est : ",noteMinimaleClasse());
+function noteMinimaleClasse() {
+  let noteMinimale = 20;  
+  notes.forEach((item, index) => {
+    if (item < noteMinimale) {
+      noteMinimale = item      
+    }
+  });
+  return noteMinimale
 }
