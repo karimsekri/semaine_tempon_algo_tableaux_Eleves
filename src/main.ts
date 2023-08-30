@@ -83,3 +83,49 @@ function noteMinimaleClasse() {
   });
   return noteMinimale
 }
+
+//7. Créez une fonction qui retourne la moyenne de la classe.
+console.log("7. Créez une fonction qui retourne la moyenne de la classe.");
+console.log("La moyenne de la classe est : ", moyenneDeLaClasse());
+function moyenneDeLaClasse() {
+  let moyenne = 0;
+  let somme = 0 ;
+  let nbreDeFois = 0 ;
+  notes.forEach((item)=>{
+    somme = somme + item
+    nbreDeFois++;
+  });
+  moyenne = somme / nbreDeFois;
+  return moyenne
+}
+
+//8. Créez une fonction qui retourne le nombre d'élèves qui ont la moyenne.
+console.log("8. Créez une fonction qui retourne le nombre d'élèves qui ont la moyenne.")
+console.log("le nombre d'élèves qui ont la moyenne : ", nombreEleveQuiOntLaMoyenne());
+function nombreEleveQuiOntLaMoyenne() {
+  let nombreEleve = 0;
+  notes.forEach((item)=>{
+    if (item >= 10) {
+      nombreEleve++
+    }
+  });
+  return nombreEleve 
+}
+
+//9. Créez une procédure qui affiche pour chaque note, le nombre d'élèves qui ont cette note.
+function nombreEleveParNote() {
+  let countNumber :  number[] = [];
+
+  for (let index = 0; index < notes.length; index++) { 
+   
+    let nombreNote = 0 ;   
+    notes.forEach((item)=>{
+        if (item === notes[index]) {
+          nombreNote ++;
+        }
+    });
+    console.log(notes[index],nombreNote);
+  }
+  
+}
+nombreEleveParNote();
